@@ -39,7 +39,7 @@ int main()
         printf("%d+%d=%d\n",a[i][j],b[i][j],d[i][j]);
       }
     }    
-    printf("addition matrix formeed =");
+    printf("addition matrix formed =");
      for(i=0;i<r;i++)
     {
         for(j=0;j<c;j++)
