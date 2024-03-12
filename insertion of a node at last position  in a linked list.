@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct NODE 
+{
+    int data ;
+    struct NODE*link;
+}*start,*p,*q;
+int insertlast()
+{
+    p = (struct NODE*)malloc(sizeof(struct NODE));
+   printf("enter data to store= ");
+   scanf("%d",&(p->data));
+   p->link = NULL;
+   if(start==NULL)
+   {
+     start = p;
+     q=p;
+   }
+   else
+   {
+       q->link=p;
+       q=p;
+   }
+   return (q->data);
+}
+int main()
+{
+    int p;
+    p = insertlast();
+    printf("succesfully inserted node  at last position and ..\n ");
+    printf(" the 2nd node has data stored =%d\n",p);
+    return 0;
+}
