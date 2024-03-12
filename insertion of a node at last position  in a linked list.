@@ -21,13 +21,13 @@ int insertlast()
        q->link=p;
        q=p;
    }
-   return (q->data);
+     printf("succesfully inserted node  at last position and ..\n ");
+    printf(" the 2nd node has data stored =%d\n",p->data);
+    printf(" the 2nd node has data  address stored =%d\n",p->link);
 }
 int main()
 {
     int p;
     p = insertlast();
-    printf("succesfully inserted node  at last position and ..\n ");
-    printf(" the 2nd node has data stored =%d\n",p);
     return 0;
 }
