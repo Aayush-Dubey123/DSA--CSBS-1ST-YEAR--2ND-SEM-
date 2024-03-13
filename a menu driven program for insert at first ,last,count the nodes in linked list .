@@ -1,0 +1,99 @@
+#include <stdio.h>
+#include <stdlib.h>
+void insertfirst();
+void insertlast();
+void countnodes();
+struct NODE 
+{
+    int data ;
+    struct NODE*link;
+}*start,*p,*q;
+
+void insertfirst()
+{
+    p = (struct NODE*)malloc(sizeof(struct NODE));
+   printf("enter data to store= ");
+   scanf("%d",&(p->data));
+   if(start==NULL)
+   {
+     start = p;
+     p->link = NULL;
+     q=p;
+   }
+   else
+   {
+       p->link=start;
+       start=p;
+   }
+    printf("succesfully inserted node  at first  position.\n ");
+    printf(" the  node has data stored =%d\n",p->data);
+    printf(" the  node has data  address stored =%d\n",p->link); printf("_____________________________________\n");
+}
+void insertlast()
+{
+    
+    p = (struct NODE*)malloc(sizeof(struct NODE));
+   printf("enter data to store= ");
+   scanf("%d",&(p->data));
+   p->link = NULL;
+   if(start==NULL)
+   {
+     start = p;
+     q=p;
+   }
+   else
+   {
+       q->link=p;
+       q=p;
+   }
+     printf("succesfully inserted node  at last position.\n ");
+    printf(" the  node has data stored =%d\n",p->data);
+    printf(" the  node has data  address stored =%d\n",p->link);
+    printf("_____________________________________\n");
+}
+void countnodes()
+{
+    int count =0 ;
+    if(start==NULL)
+    {
+         printf("the number of nodes present are = %d\n",count);
+    }
+    else
+    {
+        p =start ;
+        while(p!=NULL)
+    {
+        count++;
+        p->link;
+        p=q;
+    }    
+    printf("_____________________________________\n");
+    }
+}
+int main()
+{
+int ch ,p ;
+while (1)
+  {
+printf("operations to be formed are as follows \n");
+printf("1.insertion at first position . \n");
+printf("2.insertion at last position . \n");
+printf("3. count the number of nodes present int the linked list . \n");
+printf("4.exit . \n");
+printf("------------------\n");
+printf("enter your choice = ");
+scanf("%d",&ch);
+switch(ch)
+    {
+    case 1 : insertfirst();
+    break ;
+    case 2 : insertlast();
+    break ;
+    case 3 : countnodes();
+    break ;
+    case 4 : exit(0);
+    default : printf("invalid input");
+    }
+  }    
+    return 0;
+}
