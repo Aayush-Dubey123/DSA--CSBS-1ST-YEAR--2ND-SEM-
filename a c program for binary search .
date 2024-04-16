@@ -1,0 +1,48 @@
+#include <stdio.h>
+#define MAX 10
+void binary(int *a);
+int main() 
+{
+   int a[10],i;
+   printf("enter any 10 numbers=");
+   for(i=0;i<10;i++)
+   {
+       scanf("%d",&a[i]);
+   }
+  binary(a);
+}
+void binary(int *a)
+{
+    int num,low,high,mid,flag=0;
+    printf("enter number to search =");
+    scanf("%d",&num);
+    low=0;
+    high=MAX-1;
+    while(low<=high)
+    {
+        mid=(low+high)/2;
+       if(a[mid]==num)
+    {
+        printf("search successful\n");
+        flag=1;
+        printf("element at %dth position in array",mid);
+        break;
+    }
+    else
+    {
+     if(a[mid]<num)
+     {
+         low=mid+1;
+     }
+     else
+     {
+         high=mid-1;
+     }
+    }
+
+}
+if(flag==0)
+{
+    printf("unsuccess attempt");
+}
+}
