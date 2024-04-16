@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main() 
+{
+   int a[10],num,pos,flag=0,i;
+   printf("enter any 10 numbers=");
+   for(i=0;i<10;i++)
+   {
+       scanf("%d",&a[i]);
+   }
+   printf("enter element to search - ");
+   scanf("%d",&num);
+   for(i=0;i<10;i++)
+   {
+       if(a[i]==num)
+       {
+           printf("search successful");
+           flag=1;
+           pos=i;
+           printf("element at %d",i);
+           break;
+       }
+   }
+   if(flag=0)
+   {
+       printf("search unsuccessful");
+   }
+    return 0;
+}
